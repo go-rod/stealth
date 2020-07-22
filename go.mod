@@ -1,4 +1,4 @@
-module bypass
+module github.com/go-rod/bypass
 
 go 1.14
 

@@ -1,9 +1,8 @@
 package main
 
 import (
-	"bypass"
 	"fmt"
-
+	"github.com/go-rod/bypass"
 	"github.com/go-rod/rod"
 )
 
