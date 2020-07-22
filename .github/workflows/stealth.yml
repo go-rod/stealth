@@ -46,6 +46,7 @@ jobs:
           cat puppeteer-dump/dist/stealth.js
 
       - run: |
+          go generate
           go run example/main.go
 
       - name: Commit changes
