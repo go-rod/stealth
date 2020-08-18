@@ -4,7 +4,6 @@ package bypass
 
 import (
 	"github.com/go-rod/rod"
-	"github.com/ysmood/kit"
 )
 
 // PageE creates a stealth page that can't be detected as bot.
@@ -30,6 +29,8 @@ func PageE(b *rod.Browser) (*rod.Page, error) {
 // Page creates a stealth page that can't be detected as bot.
 func Page(b *rod.Browser) *rod.Page {
 	p, err := PageE(b)
-	kit.E(err)
+	if err != nil {
+		panic(err)
+	}
 	return p
 }

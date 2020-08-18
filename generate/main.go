@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"path/filepath"
 	"strings"
 
@@ -18,16 +19,19 @@ package bypass
 // JS for bypass
 const JS = {{.js}}
 `,
-		"js", fetchBypassJS(),
+		"js", encode(fetchBypassJS()),
 	)
 
 	kit.E(kit.OutputFile(slash("assets.go"), build, nil))
 }
 
 func fetchBypassJS() string {
-	code, err := kit.ReadString("puppeteer-dump/dist/stealth.js")
+	kit.Exec("npx", "extract-stealth-evasions").MustDo()
+
+	code, err := kit.ReadString("stealth.min.js")
 	kit.E(err)
-	return encode(string(code))
+
+	return fmt.Sprintf(";(() => {\n%s\n})();", code)
 }
 
 // not using encoding like base64 or gzip because of they will make git diff every large for small change
