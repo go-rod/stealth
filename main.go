@@ -6,19 +6,19 @@ import (
 	"github.com/go-rod/rod"
 )
 
-// PageE creates a stealth page that can't be detected as bot.
-func PageE(b *rod.Browser) (*rod.Page, error) {
-	p, err := b.PageE("")
+// Page creates a stealth page that can't be detected as bot.
+func Page(b *rod.Browser) (*rod.Page, error) {
+	p, err := b.Page("")
 	if err != nil {
 		return nil, err
 	}
 
-	_, err = p.EvalOnNewDocumentE(JS)
+	_, err = p.EvalOnNewDocument(JS)
 	if err != nil {
 		return nil, err
 	}
 
-	err = p.SetUserAgentE(nil)
+	err = p.SetUserAgent(nil)
 	if err != nil {
 		return nil, err
 	}
@@ -26,9 +26,9 @@ func PageE(b *rod.Browser) (*rod.Page, error) {
 	return p, nil
 }
 
-// Page creates a stealth page that can't be detected as bot.
-func Page(b *rod.Browser) *rod.Page {
-	p, err := PageE(b)
+// MustPage creates a stealth page that can't be detected as bot.
+func MustPage(b *rod.Browser) *rod.Page {
+	p, err := Page(b)
 	if err != nil {
 		panic(err)
 	}
