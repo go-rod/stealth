@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"path/filepath"
+	"regexp"
 	"strings"
 
 	"github.com/ysmood/kit"
@@ -30,6 +31,9 @@ func fetchBypassJS() string {
 
 	code, err := kit.ReadString("stealth.min.js")
 	kit.E(err)
+
+	// since the npx already mentioned extract-stealth-evasions, we don't have to do it again.
+	code = regexp.MustCompile(`\A/\*\![\s\S]+?\*/`).ReplaceAllString(code, "")
 
 	return fmt.Sprintf(";(() => {\n%s\n})();", code)
 }

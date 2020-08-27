@@ -21,7 +21,7 @@ func Example_main() {
 	fmt.Println(page.Element("table").Text())
 
 	// Output:
-	// 87552
+	// 112605
 	// Test Name	Result
 	// User Agent
 	// (Old)
