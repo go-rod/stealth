@@ -8,17 +8,17 @@ import (
 )
 
 func Example_main() {
-	browser := rod.New().Connect()
-	defer browser.Close()
+	browser := rod.New().MustConnect()
+	defer browser.MustClose()
 
 	// You can also use bypass.JS directly without rod
 	fmt.Println(len(bypass.JS))
 
-	page := bypass.Page(browser)
+	page := bypass.MustPage(browser)
 
-	page.Navigate("https://bot.sannysoft.com").WaitLoad()
+	page.Navigate("https://bot.sannysoft.com")
 
-	fmt.Println(page.Element("table").Text())
+	fmt.Println(page.MustElement("table").Text())
 
 	// Output:
 	// 87552
