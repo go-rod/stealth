@@ -8,17 +8,17 @@ import (
 
 // PageE creates a stealth page that can't be detected as bot.
 func PageE(b *rod.Browser) (*rod.Page, error) {
-	p, err := b.PageE("")
+	p, err := b.Page("")
 	if err != nil {
 		return nil, err
 	}
 
-	_, err = p.EvalOnNewDocumentE(JS)
+	_, err = p.EvalOnNewDocument(JS)
 	if err != nil {
 		return nil, err
 	}
 
-	err = p.SetUserAgentE(nil)
+	err = p.SetUserAgent(nil)
 	if err != nil {
 		return nil, err
 	}
