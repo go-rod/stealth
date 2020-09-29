@@ -2,6 +2,7 @@ package bypass_test
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/go-rod/bypass"
@@ -26,7 +27,7 @@ func Example_main() {
 
 		js file size: 112395
 
-		User Agent (Old): Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+		User Agent (Old): true
 
 		WebDriver (New): missing (passed)
 
@@ -56,7 +57,12 @@ func printReport(page *rod.Page) {
 	el := page.MustElement("#broken-image-dimensions.passed")
 	for _, row := range el.MustParents("table").First().MustElements("tr:nth-child(n+2)") {
 		cells := row.MustElements("td")
-		fmt.Printf("\t\t%s: %s\n\n", cells[0].MustProperty("textContent"), cells[1].MustProperty("textContent"))
+		key := cells[0].MustProperty("textContent")
+		if strings.HasPrefix(key.String(), "User Agent") {
+			fmt.Printf("\t\t%s: %t\n\n", key, !strings.Contains(cells[1].MustProperty("textContent").String(), "HeadlessChrome/"))
+		} else {
+			fmt.Printf("\t\t%s: %s\n\n", key, cells[1].MustProperty("textContent"))
+		}
 	}
 
 	page.MustScreenshot("")
