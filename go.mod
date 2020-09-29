@@ -1,5 +1,5 @@
 module github.com/go-rod/bypass
 
-go 1.14
+go 1.15
 
-require github.com/go-rod/rod v0.61.1
+require github.com/go-rod/rod v0.69.1
