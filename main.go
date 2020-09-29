@@ -4,6 +4,8 @@ package bypass
 
 import (
 	"github.com/go-rod/rod"
+	"github.com/go-rod/rod/lib/proto"
+	"strings"
 )
 
 // Page creates a stealth page that can't be detected as bot.
@@ -18,7 +20,14 @@ func Page(b *rod.Browser) (*rod.Page, error) {
 		return nil, err
 	}
 
-	err = p.SetUserAgent(nil)
+	ua, err := NormalizeUA(b)
+	if err != nil {
+		return nil, err
+	}
+
+	err = p.SetUserAgent(&proto.NetworkSetUserAgentOverride{
+		UserAgent: ua,
+	})
 	if err != nil {
 		return nil, err
 	}
@@ -33,4 +42,13 @@ func MustPage(b *rod.Browser) *rod.Page {
 		panic(err)
 	}
 	return p
+}
+
+// NormalizeUA normalize the default user-agent, as a head mode browser.
+func NormalizeUA(b *rod.Browser) (string, error) {
+	v, err := proto.BrowserGetVersion{}.Call(b)
+	if err != nil {
+		return "", err
+	}
+	return strings.ReplaceAll(v.UserAgent, "HeadlessChrome/", "Chrome/"), nil
 }
