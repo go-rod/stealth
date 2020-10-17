@@ -3,14 +3,15 @@
 package bypass
 
 import (
+	"strings"
+
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/proto"
-	"strings"
 )
 
 // Page creates a stealth page that can't be detected as bot.
 func Page(b *rod.Browser) (*rod.Page, error) {
-	p, err := b.Page("")
+	p, err := b.Page(proto.TargetCreateTarget{})
 	if err != nil {
 		return nil, err
 	}
