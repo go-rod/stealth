@@ -1,7 +1,5 @@
-github.com/go-rod/rod v0.74.2 h1:XKLjoxQsdi+ZJi7WddJ5meV672I1JmVqprmRrMIs98o=
-github.com/go-rod/rod v0.74.2/go.mod h1:FnR76m5OK+UxLwwiSnXbWB1+MjlRXU8q6la59FH9UsA=
-github.com/gorilla/websocket v1.4.2 h1:+/TMaTYc4QFitKJxsQ7Yye35DkWvkdLcvGKqM+x0Ufc=
-github.com/gorilla/websocket v1.4.2/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
+github.com/go-rod/rod v0.75.0 h1:dBK9rshzu1Z/VSWrKHfvjPnYL3MrQFKb7j9kNf5I81g=
+github.com/go-rod/rod v0.75.0/go.mod h1:XEc4dRYDxlKw+SFG3ZpWTZ8k4vosgg5IDUHKYPMzVSI=
 github.com/ysmood/goob v0.3.0 h1:XZ51cZJ4W3WCoCiUktixzMIQF86W7G5VFL4QQ/Q2uS0=
 github.com/ysmood/goob v0.3.0/go.mod h1:S3lq113Y91y1UBf1wj1pFOxeahvfKkCk6mTWTWbDdWs=
 github.com/ysmood/got v0.8.3 h1:YpbQUEKhBXC+BBQJXLpJeg21qDcAT17B90ybmuN0nTk=
