@@ -25,7 +25,7 @@ func Example_main() {
 	/*
 		Output:
 
-		js file size: 137550
+		js file size: 137623
 
 		User Agent (Old): true
 
