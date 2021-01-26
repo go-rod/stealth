@@ -27,7 +27,7 @@ const JS = {{.js}}
 }
 
 func fetchBypassJS() string {
-	utils.Exec("npx", "extract-stealth-evasions")
+	utils.Exec("npx", "extract-stealth-evasions@latest")
 
 	code, err := utils.ReadString("stealth.min.js")
 	utils.E(err)
