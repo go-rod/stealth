@@ -7,7 +7,12 @@ import (
 
 	"github.com/go-rod/bypass"
 	"github.com/go-rod/rod"
+	"github.com/go-rod/rod/lib/launcher"
 )
+
+func init() {
+	launcher.NewBrowser().MustGet()
+}
 
 func Example_main() {
 	browser := rod.New().Timeout(time.Minute).MustConnect()
