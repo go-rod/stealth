@@ -30,7 +30,7 @@ func Example_main() {
 	/*
 		Output:
 
-		js file size: 156596
+		js file size: 161741
 
 		User Agent (Old): true
 
@@ -40,7 +40,7 @@ func Example_main() {
 
 		Chrome (New): present (passed)
 
-		Permissions (New): denied
+		Permissions (New): prompt
 
 		Plugins Length (Old): 3
 
