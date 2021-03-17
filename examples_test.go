@@ -30,7 +30,7 @@ func Example_main() {
 	/*
 		Output:
 
-		js file size: 161741
+		js file size: 161797
 
 		User Agent (Old): true
 
