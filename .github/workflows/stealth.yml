@@ -7,7 +7,7 @@ on:
   pull_request:
 
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * 6"
 
 jobs:
   build:
@@ -25,6 +25,5 @@ jobs:
 
     - name: test
       run: |
-        go install github.com/ysmood/golangci-lint@latest && golangci-lint
         go generate
         go test

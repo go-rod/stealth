@@ -1,6 +1,7 @@
 package stealth_test
 
 import (
+	"crypto/md5"
 	"fmt"
 	"strings"
 	"time"
@@ -19,7 +20,7 @@ func Example_main() {
 	defer browser.MustClose()
 
 	// You can also use stealth.JS directly without rod
-	fmt.Printf("js file size: %d\n\n", len(stealth.JS))
+	fmt.Printf("js: %x\n\n", md5.Sum([]byte(stealth.JS)))
 
 	page := stealth.MustPage(browser)
 
@@ -30,7 +31,7 @@ func Example_main() {
 	/*
 		Output:
 
-		js file size: 161797
+		js: 65ba02c7954c8248bd12239c38ad61e7
 
 		User Agent (Old): true
 

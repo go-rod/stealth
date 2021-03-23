@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
@@ -17,13 +18,20 @@ func main() {
 
 package stealth
 
+// JSVersion for stealth
+const JSVersion = "v{{.ver}}"
+
 // JS for stealth
 const JS = {{.js}}
 `,
+		"ver", version(),
 		"js", encode(fetchJS()),
 	)
 
 	utils.E(utils.OutputFile(slash("assets.go"), build))
+
+	utils.Exec("go", "install", "github.com/ysmood/golangci-lint@latest")
+	utils.Exec("golangci-lint")
 }
 
 func fetchJS() string {
@@ -36,6 +44,12 @@ func fetchJS() string {
 	code = regexp.MustCompile(`\A/\*\![\s\S]+?\*/`).ReplaceAllString(code, "")
 
 	return fmt.Sprintf(";(() => {\n%s\n})();", code)
+}
+
+func version() string {
+	b, err := exec.Command("npx", "extract-stealth-evasions@latest", "--version").CombinedOutput()
+	utils.E(err)
+	return strings.TrimSpace(string(b))
 }
 
 // not using encoding like base64 or gzip because of they will make git diff every large for small change
