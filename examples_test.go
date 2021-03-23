@@ -1,13 +1,13 @@
-package bypass_test
+package stealth_test
 
 import (
 	"fmt"
 	"strings"
 	"time"
 
-	"github.com/go-rod/bypass"
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/launcher"
+	"github.com/go-rod/stealth"
 )
 
 func init() {
@@ -18,10 +18,10 @@ func Example_main() {
 	browser := rod.New().Timeout(time.Minute).MustConnect()
 	defer browser.MustClose()
 
-	// You can also use bypass.JS directly without rod
-	fmt.Printf("js file size: %d\n\n", len(bypass.JS))
+	// You can also use stealth.JS directly without rod
+	fmt.Printf("js file size: %d\n\n", len(stealth.JS))
 
-	page := bypass.MustPage(browser)
+	page := stealth.MustPage(browser)
 
 	page.MustNavigate("https://bot.sannysoft.com")
 

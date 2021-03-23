@@ -1,4 +1,4 @@
-module github.com/go-rod/bypass
+module github.com/go-rod/stealth
 
 go 1.15
 

@@ -1,6 +1,6 @@
 //go:generate go run ./generate
 
-package bypass
+package stealth
 
 import (
 	"github.com/go-rod/rod"
