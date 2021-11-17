@@ -31,7 +31,7 @@ func Example_main() {
 	/*
 		Output:
 
-		js: 65ba02c7954c8248bd12239c38ad61e7
+		js: 92e4bbbf8bd3ad1d67486452008d59f3
 
 		User Agent (Old): true
 
