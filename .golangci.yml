@@ -5,9 +5,10 @@ run:
 linters:
   enable:
     - gofmt
-    - golint
+    - revive
     - gocyclo
     - misspell
+    - bodyclose
 
 gocyclo:
   min-complexity: 15
