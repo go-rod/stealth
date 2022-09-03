@@ -1,5 +1,6 @@
 //go:generate go run ./generate
 
+// Package stealth is a package for anti-bot-detection with rod
 package stealth
 
 import (
