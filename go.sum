@@ -1,5 +1,7 @@
 github.com/go-rod/rod v0.109.3 h1:MxuSJGK9lEUq07K+QPfnxnuvQpsQT+YI4SoQjSE0LVg=
 github.com/go-rod/rod v0.109.3/go.mod h1:GZDtmEs6RpF6kBRYpGCZXxXlKNneKVPiKOjaMbmVVjE=
+github.com/go-rod/rod v0.112.0 h1:U9Yc+quw4hxZ6GrdbWFBeylvaYElEKM9ijFW2LYkGlA=
+github.com/go-rod/rod v0.112.0/go.mod h1:GZDtmEs6RpF6kBRYpGCZXxXlKNneKVPiKOjaMbmVVjE=
 github.com/ysmood/goob v0.4.0 h1:HsxXhyLBeGzWXnqVKtmT9qM7EuVs/XOgkX7T6r1o1AQ=
 github.com/ysmood/goob v0.4.0/go.mod h1:u6yx7ZhS4Exf2MwciFr6nIM8knHQIE22lFpWHnfql18=
 github.com/ysmood/got v0.31.3 h1:UvvF+TDVsZLO7MSzm/Bd/H4HVp+7S5YwsxgdwaKq8uA=
