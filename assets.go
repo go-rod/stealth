@@ -3,7 +3,7 @@
 package stealth
 
 // JSVersion for stealth
-const JSVersion = "v2.7.1"
+const JSVersion = "v2.7.3"
 
 // JS for stealth
 const JS = `;(() => {
